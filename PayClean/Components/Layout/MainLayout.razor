@@ -1,0 +1,31 @@
+﻿@using MudBlazor.Utilities
+@inherits LayoutComponentBase
+
+<MudThemingProvider Theme="_myCustomTheme"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+    <MudAppBar Elevation="0">
+        <MudText Typo="Typo.h5" Color="Color.Primary">PayClean</MudText>
+    </MudAppBar>
+    <MudMainContent Class="mt-16 pa-4">
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+
+    private static readonly MudColor AppBarColor = new("#ffffff");
+    private static readonly MudColor PrimaryColor = new("#51a89b");
+    
+    private readonly MudTheme _myCustomTheme = new()
+    {
+        Palette = new PaletteLight()
+        {
+            Primary = PrimaryColor,
+            AppbarBackground = AppBarColor
+        }
+    };
+
+}
